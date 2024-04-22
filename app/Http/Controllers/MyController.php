@@ -20,8 +20,4 @@ class MyController extends Controller
     {
         echo 'do something';
     }
-
-    public function doSomethingElse($prop){
-        echo 'do something else';
-    }
 }
