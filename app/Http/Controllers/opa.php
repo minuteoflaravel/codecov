@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class opa extends Controller
 {
-    //
+    public function testing()
+    {
+        
+    }
 }
