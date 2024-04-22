@@ -35,6 +35,8 @@ jobs:
       run: |
         php artisan test
         phpdbg -qrr ./vendor/phpunit/phpunit/phpunit -v --colors=never --stderr --coverage-clover=coverage.xml
+        export CODECOV_TOKEN=${{ secrets.CODECOV_TOKEN }}
+        bash <(curl -s https://codecov.io/bash) || echo 'Codecov failed to upload'
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v4.0.1
       with:
