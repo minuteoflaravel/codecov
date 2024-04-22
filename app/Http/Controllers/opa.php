@@ -8,6 +8,17 @@ class opa extends Controller
 {
     public function testingOks()
     {
-        
+
     }
+
+
+    public function load()
+    {
+        if (!request()->input('p')) {
+            return '';
+        }
+
+        return '2';
+    }
+
 }
