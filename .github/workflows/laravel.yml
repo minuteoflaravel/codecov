@@ -32,7 +32,9 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: php artisan test
+      run: |
+        php artisan test
+        phpdbg -qrr ./vendor/phpunit/phpunit/phpunit -v --colors=never --stderr --coverage-clover=coverage.xml
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v4.0.1
       with:
